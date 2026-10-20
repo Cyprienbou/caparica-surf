@@ -17,7 +17,7 @@ Goal: find clean, manageable sessions (breaking waves ~0.7 to 1.5 m, light offsh
 |---|---|
 | Repository | created |
 | Collector | written, offline tests passing, first live run pending |
-| Spot profiles | not started |
+| Spot profiles | first draft for 6 beaches (`config/spots.yaml`), CDS Norte/Sul mapping to confirm |
 | Tide data | source identified, not integrated |
 | Scheduled analysis | not started |
 

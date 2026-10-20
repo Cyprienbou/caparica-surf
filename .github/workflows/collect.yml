@@ -2,10 +2,10 @@ name: Collect forecasts
 
 # GitHub cron runs in UTC. Lisbon is UTC+0 in winter and UTC+1 in summer, so each
 # slot is scheduled at two UTC hours. That guarantees fresh data before the
-# 07:00, 12:00 and 18:00 Lisbon analyses all year (GitHub can delay runs by 10-30 min).
+# 09:00 and 18:00 Lisbon alerts all year (GitHub can delay runs by 10-30 min).
 on:
   schedule:
-    - cron: "20 4,5,10,11,16,17 * * *"
+    - cron: "20 6,7,15,16 * * *"
   workflow_dispatch:
 
 permissions:
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Run offline tests
         run: python3 -m unittest discover -s tests

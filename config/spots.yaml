@@ -1,0 +1,147 @@
+# Spot profiles for the six Costa da Caparica beaches, listed north to south.
+# Every field says where it comes from and how confident we are.
+# confidence: high = documented by a reliable source; medium = derived from sources;
+#             low = hypothesis to confirm; unknown = no evidence yet (to learn from session feedback).
+# Wind classification rule (shared by all six beaches, see "coast"):
+#   angular distance between wind direction (FROM) and the offshore direction:
+#   <= 30 offshore | 30-67.5 cross-offshore | 67.5-112.5 cross-shore | 112.5-150 cross-onshore | > 150 onshore
+
+coast:
+  name: Costa da Caparica urban beaches (Sao Joao to Praia Nova)
+  length_km: 3.2
+  coastline_bearing_deg: 146      # coast runs NW -> SE
+  beach_facing_deg: 236           # direction the beaches look towards (WSW / SW)
+  offshore_wind_from_deg: 56      # NE
+  derivation: >
+    Computed from the beach coordinates listed below (segment bearings 143-151 deg).
+    Coordinates are beach access points, so this is the coastline trend, not a survey.
+  confidence: medium
+  swell_exposure:
+    note: >
+      Hypothesis: beaches face SW, so W and SW swells arrive almost head-on while NW swells
+      arrive at a steep angle and lose size. This would explain why Surfline often shows much
+      smaller surf here than the offshore models. Mondo.surf lists SW, W and NW as working swells.
+    best_swell_from_deg: [200, 290]
+    reduced_swell_from_deg: [290, 340]
+    confidence: low
+  structure: >
+    Six beaches separated by rock groynes (esporoes) running from Sao Joao to Praia Nova.
+    Groynes trap sand and shape sandbars, which change after storms.
+  sand_vs_tide: Dry sand strip becomes much narrower at high tide on all these beaches (playocean).
+  general_hazards:
+    - Rip currents usually form along the groynes (general beach-break knowledge, not spot-specific evidence).
+    - Waves can break heavily near the groyne rocks in bigger swells (documented for CDS by mondo.surf).
+  sources:
+    - https://www.playocean.net/en/portugal/almada/beach-map
+    - https://www.visitportugal.com/en/content/costa-de-caparica-praias-da-vila
+    - https://www.mondo.surf/surf-spot/praia-cds/guide/5042
+
+spots:
+  - id: sao_joao
+    name: Praia de Sao Joao da Caparica
+    beach_lat: 38.660753
+    beach_lon: -9.255647
+    location_note: Long beach, split North/South; south end bounded by a 225 m groyne. Coordinates are its northern access.
+    surfline:
+      spot: Sao Joao da Caparica
+      spot_id: 5dbb587ff387900001fee288
+      lat: 38.65589
+      lon: -9.2526
+      match_confidence: high
+    meo_cams:
+      - https://beachcam.meo.pt/livecams/costa-de-caparica-sao-joao-estatica/
+      - https://beachcam.meo.pt/livecams/costa-de-caparica-sao-joao-cova-do-vapor/
+    tide_preference: {value: unknown, evidence: []}
+    notes: Popular, several surf schools, consistent surf (costa-da-caparica.com). Furthest beach from town.
+    drive_time_min: {value: null, method: to measure, note: about 2.5 km north of the town beaches}
+
+  - id: cds_norte
+    name: CDS Norte
+    beach_lat: 38.644890
+    beach_lon: -9.241880
+    location_note: >
+      ASSUMPTION TO CONFIRM: northern part of the CDS sector, by the CDS north groyne
+      (the rock painted "C.D.S."). Coordinates are those of Praia do CDS as a whole.
+    surfline:
+      spot: Marcelino
+      spot_id: 584204214e65fad6a7709d15
+      lat: 38.64612
+      lon: -9.24575
+      match_confidence: low
+    meo_cams:
+      - https://beachcam.meo.pt/livecams/costa-da-caparica-cds-norte-estatica/
+      - https://beachcam.meo.pt/livecams/costa-da-caparica-cds/
+    tide_preference: {value: unknown, evidence: ["mondo.surf says all tides work at CDS (generic)"]}
+    notes: Mostly rights per mondo.surf; crowded, localism reported. Named after the CDS surf club.
+    drive_time_min: {value: null, method: to measure}
+
+  - id: cds_sul
+    name: CDS Sul
+    beach_lat: 38.644890
+    beach_lon: -9.241880
+    location_note: "ASSUMPTION TO CONFIRM - southern part of the CDS sector, by the CDS south groyne."
+    surfline:
+      spot: Praia do Barbas
+      spot_id: 584204214e65fad6a7709d16
+      lat: 38.644758
+      lon: -9.24246
+      match_confidence: medium
+    meo_cams:
+      - https://beachcam.meo.pt/livecams/costadecaparicacdssulestatica/
+      - https://beachcam.meo.pt/livecams/costa-da-caparica-cds/
+    tide_preference: {value: unknown, evidence: ["mondo.surf says all tides work at CDS (generic)"]}
+    notes: Surfline's Praia do Barbas point sits on the CDS coordinates.
+    drive_time_min: {value: null, method: to measure}
+
+  - id: tarquinio
+    name: Praia do Tarquinio-Paraiso
+    beach_lat: 38.642120
+    beach_lon: -9.239233
+    location_note: Bounded by two groynes; shares its bathing-water unit with Dragao Vermelho.
+    surfline:
+      spot: Costa da Caparica
+      spot_id: 5842041f4e65fad6a7708e65
+      lat: 38.64036
+      lon: -9.24275
+      match_confidence: medium
+    meo_cams:
+      - https://beachcam.meo.pt/livecams/costa-da-caparica-tarquinio/
+      - https://beachcam.meo.pt/livecams/costa-da-caparica-tarquinio-fixa/
+    tide_preference: {value: unknown, evidence: []}
+    notes: MEO Tarquinio page also shows a small numeric surf report (source not yet identified).
+    drive_time_min: {value: null, method: to measure}
+
+  - id: dragao_vermelho
+    name: Praia do Dragao Vermelho
+    beach_lat: 38.639879
+    beach_lon: -9.237170
+    location_note: Between Tarquinio and Praia Nova; fishing boat ramp nearby.
+    surfline:
+      spot: Costa da Caparica
+      spot_id: 5842041f4e65fad6a7708e65
+      lat: 38.64036
+      lon: -9.24275
+      match_confidence: medium
+    meo_cams:
+      - https://beachcam.meo.pt/livecams/costa-da-caparica-tarquinio/   # closest cam, no dedicated one found
+    tide_preference: {value: unknown, evidence: []}
+    notes: Surfers go there (playocean). No dedicated cam.
+    drive_time_min: {value: null, method: to measure}
+
+  - id: praia_nova
+    name: Praia Nova
+    beach_lat: 38.637270
+    beach_lon: -9.235125
+    location_note: Southernmost of the six groyne-bounded beaches.
+    surfline:
+      spot: Costa da Caparica   # nearest Surfline point 1 km north; Praia da Saude (640b9d48b6d7692692951263) is 0.9 km south
+      spot_id: 5842041f4e65fad6a7708e65
+      lat: 38.64036
+      lon: -9.24275
+      match_confidence: low
+    meo_cams:
+      - https://beachcam.meo.pt/livecams/costa-da-caparica-praia-nova/
+      - https://beachcam.meo.pt/livecams/costa-da-caparica-praia-nova-estatica/
+    tide_preference: {value: unknown, evidence: []}
+    notes: Sea described as usually rough and popular with surfers (playocean).
+    drive_time_min: {value: null, method: to measure}
