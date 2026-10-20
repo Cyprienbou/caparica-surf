@@ -28,7 +28,16 @@ coast:
     confidence: low
   structure: >
     Six beaches separated by rock groynes (esporoes) running from Sao Joao to Praia Nova.
-    Groynes trap sand and shape sandbars, which change after storms.
+    Groynes trap sand and shape sandbars.
+  sandbars:
+    variability: high
+    evidence: >
+      Local observation from Cyp (2026-10-20): banks change quickly; some weeks are excellent and
+      others poor at the same beach. This overrides thesurfatlas' claim of fairly predictable banks.
+    implication: >
+      No forecast source models sandbars. Beach ranking must rely on recent evidence (MEO cams,
+      Cyp's session feedback), which loses value with time and after big swells that reshape the banks.
+    confidence: medium
   sand_vs_tide: Dry sand strip becomes much narrower at high tide on all these beaches (playocean).
   general_hazards:
     - Rip currents usually form along the groynes (general beach-break knowledge, not spot-specific evidence).
@@ -76,7 +85,7 @@ spots:
     beach_lat: 38.644890
     beach_lon: -9.241880
     location_note: >
-      ASSUMPTION TO CONFIRM: northern part of the CDS sector, by the CDS north groyne
+      Confirmed by Cyp (2026-10-20): northern side of Praia do CDS, by the CDS north groyne
       (the rock painted "C.D.S."). Coordinates are those of Praia do CDS as a whole.
     surfline:
       spot: Marcelino
@@ -99,7 +108,7 @@ spots:
     name: CDS Sul
     beach_lat: 38.644890
     beach_lon: -9.241880
-    location_note: "ASSUMPTION TO CONFIRM - southern part of the CDS sector, by the CDS south groyne."
+    location_note: "Confirmed by Cyp (2026-10-20): southern side of Praia do CDS, by the CDS south groyne."
     surfline:
       spot: Praia do Barbas
       spot_id: 584204214e65fad6a7709d16

@@ -16,7 +16,7 @@ Goal: find clean, manageable sessions (breaking waves ~0.7 to 1.5 m, light offsh
 | Component | State |
 |---|---|
 | Repository | created |
-| Collector | written, offline tests passing, first live run pending |
+| Collector | live since 2026-10-20, 4 wave + 4 wind models, wave energy added |
 | Spot profiles | 6 beaches with Surfline, surf-forecast, MEO cam mapping (`config/spots.yaml`); CDS Norte/Sul to confirm |
 | Scoring | v0 rules incl. wave energy (`docs/scoring.md`), not automated yet |
 | Tide data | source identified, not integrated |
