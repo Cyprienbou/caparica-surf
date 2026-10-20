@@ -1,0 +1,184 @@
+{
+  "run_id": "2026-10-20T2159Z",
+  "run_at_utc": "2026-10-20T21:59:42+00:00",
+  "attribution": "Weather and marine data by Open-Meteo.com (CC BY 4.0); wave models from DWD, ECMWF, Meteo-France and NOAA.",
+  "note": "Forecast model output, not observations. Offshore wave height is not breaking wave height.",
+  "points": {
+    "marine": {
+      "name": "caparica_offshore",
+      "latitude": 38.64,
+      "longitude": -9.28
+    },
+    "weather": {
+      "name": "caparica_beach",
+      "latitude": 38.64,
+      "longitude": -9.24
+    }
+  },
+  "results": [
+    {
+      "source": "marine",
+      "model": "best_match",
+      "url": "https://marine-api.open-meteo.com/v1/marine?latitude=38.64&longitude=-9.28&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwave_peak_period%2Cswell_wave_height%2Cswell_wave_direction%2Cswell_wave_period%2Cswell_wave_peak_period%2Csecondary_swell_wave_height%2Csecondary_swell_wave_direction%2Csecondary_swell_wave_period%2Cwind_wave_height%2Cwind_wave_direction%2Cwind_wave_period%2Csea_level_height_msl%2Csea_surface_temperature&models=best_match&forecast_days=3&timezone=GMT&timeformat=iso8601&cell_selection=sea",
+      "ok": true,
+      "grid_latitude": 38.625,
+      "grid_longitude": -9.2916565,
+      "generationtime_ms": 0.30803680419921875,
+      "hours": 72,
+      "first_time_utc": "2026-10-20T00:00",
+      "last_time_utc": "2026-10-22T23:00",
+      "empty_variables": [
+        "wave_peak_period"
+      ]
+    },
+    {
+      "source": "marine",
+      "model": "dwd_ewam",
+      "url": "https://marine-api.open-meteo.com/v1/marine?latitude=38.64&longitude=-9.28&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwave_peak_period%2Cswell_wave_height%2Cswell_wave_direction%2Cswell_wave_period%2Cswell_wave_peak_period%2Csecondary_swell_wave_height%2Csecondary_swell_wave_direction%2Csecondary_swell_wave_period%2Cwind_wave_height%2Cwind_wave_direction%2Cwind_wave_period%2Csea_level_height_msl%2Csea_surface_temperature&models=dwd_ewam&forecast_days=3&timezone=GMT&timeformat=iso8601&cell_selection=sea",
+      "ok": true,
+      "grid_latitude": 38.65,
+      "grid_longitude": -9.3,
+      "generationtime_ms": 0.25916099548339844,
+      "hours": 72,
+      "first_time_utc": "2026-10-20T00:00",
+      "last_time_utc": "2026-10-22T23:00",
+      "empty_variables": [
+        "wave_peak_period",
+        "secondary_swell_wave_height",
+        "secondary_swell_wave_direction",
+        "secondary_swell_wave_period",
+        "sea_level_height_msl",
+        "sea_surface_temperature"
+      ]
+    },
+    {
+      "source": "marine",
+      "model": "ecmwf_wam025",
+      "url": "https://marine-api.open-meteo.com/v1/marine?latitude=38.64&longitude=-9.28&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwave_peak_period%2Cswell_wave_height%2Cswell_wave_direction%2Cswell_wave_period%2Cswell_wave_peak_period%2Csecondary_swell_wave_height%2Csecondary_swell_wave_direction%2Csecondary_swell_wave_period%2Cwind_wave_height%2Cwind_wave_direction%2Cwind_wave_period%2Csea_level_height_msl%2Csea_surface_temperature&models=ecmwf_wam025&forecast_days=3&timezone=GMT&timeformat=iso8601&cell_selection=sea",
+      "ok": true,
+      "grid_latitude": 38.5,
+      "grid_longitude": -9.25,
+      "generationtime_ms": 0.1493692398071289,
+      "hours": 72,
+      "first_time_utc": "2026-10-20T00:00",
+      "last_time_utc": "2026-10-22T23:00",
+      "empty_variables": [
+        "swell_wave_height",
+        "swell_wave_direction",
+        "swell_wave_period",
+        "swell_wave_peak_period",
+        "secondary_swell_wave_height",
+        "secondary_swell_wave_direction",
+        "secondary_swell_wave_period",
+        "wind_wave_height",
+        "wind_wave_direction",
+        "wind_wave_period",
+        "sea_level_height_msl",
+        "sea_surface_temperature"
+      ]
+    },
+    {
+      "source": "marine",
+      "model": "meteofrance_wave",
+      "url": "https://marine-api.open-meteo.com/v1/marine?latitude=38.64&longitude=-9.28&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwave_peak_period%2Cswell_wave_height%2Cswell_wave_direction%2Cswell_wave_period%2Cswell_wave_peak_period%2Csecondary_swell_wave_height%2Csecondary_swell_wave_direction%2Csecondary_swell_wave_period%2Cwind_wave_height%2Cwind_wave_direction%2Cwind_wave_period%2Csea_level_height_msl%2Csea_surface_temperature&models=meteofrance_wave&forecast_days=3&timezone=GMT&timeformat=iso8601&cell_selection=sea",
+      "ok": true,
+      "grid_latitude": 38.625,
+      "grid_longitude": -9.2916565,
+      "generationtime_ms": 0.4284381866455078,
+      "hours": 72,
+      "first_time_utc": "2026-10-20T00:00",
+      "last_time_utc": "2026-10-22T23:00",
+      "empty_variables": [
+        "wave_peak_period",
+        "swell_wave_peak_period",
+        "sea_level_height_msl",
+        "sea_surface_temperature"
+      ]
+    },
+    {
+      "source": "marine",
+      "model": "ncep_gfswave025",
+      "url": "https://marine-api.open-meteo.com/v1/marine?latitude=38.64&longitude=-9.28&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwave_peak_period%2Cswell_wave_height%2Cswell_wave_direction%2Cswell_wave_period%2Cswell_wave_peak_period%2Csecondary_swell_wave_height%2Csecondary_swell_wave_direction%2Csecondary_swell_wave_period%2Cwind_wave_height%2Cwind_wave_direction%2Cwind_wave_period%2Csea_level_height_msl%2Csea_surface_temperature&models=ncep_gfswave025&forecast_days=3&timezone=GMT&timeformat=iso8601&cell_selection=sea",
+      "ok": true,
+      "grid_latitude": 38.5,
+      "grid_longitude": -9.25,
+      "generationtime_ms": 0.37419795989990234,
+      "hours": 72,
+      "first_time_utc": "2026-10-20T00:00",
+      "last_time_utc": "2026-10-22T23:00",
+      "empty_variables": [
+        "wave_peak_period",
+        "swell_wave_peak_period",
+        "sea_level_height_msl",
+        "sea_surface_temperature"
+      ]
+    },
+    {
+      "source": "weather",
+      "model": "best_match",
+      "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=best_match&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
+      "ok": true,
+      "grid_latitude": 38.66046,
+      "grid_longitude": -9.218198,
+      "generationtime_ms": 0.3094673156738281,
+      "hours": 72,
+      "first_time_utc": "2026-10-20T00:00",
+      "last_time_utc": "2026-10-22T23:00",
+      "empty_variables": []
+    },
+    {
+      "source": "weather",
+      "model": "ecmwf_ifs025",
+      "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=ecmwf_ifs025&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
+      "ok": true,
+      "grid_latitude": 38.75,
+      "grid_longitude": -9.25,
+      "generationtime_ms": 0.8480548858642578,
+      "hours": 72,
+      "first_time_utc": "2026-10-20T00:00",
+      "last_time_utc": "2026-10-22T23:00",
+      "empty_variables": []
+    },
+    {
+      "source": "weather",
+      "model": "icon_seamless",
+      "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=icon_seamless&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
+      "ok": true,
+      "grid_latitude": 38.625,
+      "grid_longitude": -9.1875,
+      "generationtime_ms": 1.8696784973144531,
+      "hours": 72,
+      "first_time_utc": "2026-10-20T00:00",
+      "last_time_utc": "2026-10-22T23:00",
+      "empty_variables": []
+    },
+    {
+      "source": "weather",
+      "model": "meteofrance_seamless",
+      "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=meteofrance_seamless&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
+      "ok": true,
+      "grid_latitude": 38.64,
+      "grid_longitude": -9.24,
+      "generationtime_ms": 26.061654090881348,
+      "hours": 72,
+      "first_time_utc": "2026-10-20T00:00",
+      "last_time_utc": "2026-10-22T23:00",
+      "empty_variables": []
+    },
+    {
+      "source": "weather",
+      "model": "gfs_seamless",
+      "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=gfs_seamless&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
+      "ok": true,
+      "grid_latitude": 38.717865,
+      "grid_longitude": -9.2578125,
+      "generationtime_ms": 0.15997886657714844,
+      "hours": 72,
+      "first_time_utc": "2026-10-20T00:00",
+      "last_time_utc": "2026-10-22T23:00",
+      "empty_variables": []
+    }
+  ],
+  "ok_models": 10,
+  "failed_models": 0
+}
