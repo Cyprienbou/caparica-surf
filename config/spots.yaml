@@ -20,7 +20,9 @@ coast:
     note: >
       Hypothesis: beaches face SW, so W and SW swells arrive almost head-on while NW swells
       arrive at a steep angle and lose size. This would explain why Surfline often shows much
-      smaller surf here than the offshore models. Mondo.surf lists SW, W and NW as working swells.
+      smaller surf here than the offshore models. Evidence so far: surf-forecast.com gives W as best
+      swell for Costa da Caparica and SW for Praia da Saude; mondo.surf lists SW, W and NW for CDS;
+      thesurfatlas says the Castelo peaks (Tarquinio to Dragao Vermelho) handle size on heavy winter NW swells.
     best_swell_from_deg: [200, 290]
     reduced_swell_from_deg: [290, 340]
     confidence: low
@@ -35,6 +37,15 @@ coast:
     - https://www.playocean.net/en/portugal/almada/beach-map
     - https://www.visitportugal.com/en/content/costa-de-caparica-praias-da-vila
     - https://www.mondo.surf/surf-spot/praia-cds/guide/5042
+    - https://www.surf-forecast.com/breaks/Costada-Caparica
+    - https://thesurfatlas.com/surfing-portugal/costa-da-caparica-surf/
+
+# Preferred forecast references, in the order the analysis uses them:
+#   1. surf-forecast.com six-day page of the mapped break (readable from Claude's cloud tools, no browser needed):
+#      wave height, period, swell direction, energy kJ, wind and wind state, rating /10, tide times.
+#   2. Surfline (read in Cyp's Chrome): surf height at the beach, hourly, quality colour, tide.
+#   3. Open-Meteo models from data/latest (ECMWF, Meteo-France, DWD): cross-check and fallback.
+#   4. MEO Beachcam: real conditions for the 09:00 same-day check and for calibration.
 
 spots:
   - id: sao_joao
@@ -48,6 +59,11 @@ spots:
       lat: 38.65589
       lon: -9.2526
       match_confidence: high
+    surf_forecast:
+      break: Sao-Joao
+      six_day: https://www.surf-forecast.com/breaks/Sao-Joao/forecasts/latest/six_day
+      guide: "Beach/jetty, fairly consistent (surf-forecast)."
+    surf_atlas: "thesurfatlas: shifting wedges, can be mushy in summer; flatter, fatter waves suit improvers; few groynes on this stretch; east winds groom it in November."
     meo_cams:
       - https://beachcam.meo.pt/livecams/costa-de-caparica-sao-joao-estatica/
       - https://beachcam.meo.pt/livecams/costa-de-caparica-sao-joao-cova-do-vapor/
@@ -68,6 +84,10 @@ spots:
       lat: 38.64612
       lon: -9.24575
       match_confidence: low
+    surf_forecast:
+      break: Costada-Caparica
+      six_day: https://www.surf-forecast.com/breaks/Costada-Caparica/forecasts/latest/six_day
+      guide: "Exposed beach/jetty break, best swell W, best wind E (offshore), works at all tides, lefts and rights, crowded, rocks and locals (surf-forecast)."
     meo_cams:
       - https://beachcam.meo.pt/livecams/costa-da-caparica-cds-norte-estatica/
       - https://beachcam.meo.pt/livecams/costa-da-caparica-cds/
@@ -86,6 +106,10 @@ spots:
       lat: 38.644758
       lon: -9.24246
       match_confidence: medium
+    surf_forecast:
+      break: Costada-Caparica
+      six_day: https://www.surf-forecast.com/breaks/Costada-Caparica/forecasts/latest/six_day
+      guide: "Exposed beach/jetty break, best swell W, best wind E (offshore), works at all tides, lefts and rights, crowded, rocks and locals (surf-forecast)."
     meo_cams:
       - https://beachcam.meo.pt/livecams/costadecaparicacdssulestatica/
       - https://beachcam.meo.pt/livecams/costa-da-caparica-cds/
@@ -104,6 +128,11 @@ spots:
       lat: 38.64036
       lon: -9.24275
       match_confidence: medium
+    surf_forecast:
+      break: Costada-Caparica
+      six_day: https://www.surf-forecast.com/breaks/Costada-Caparica/forecasts/latest/six_day
+      guide: "Exposed beach/jetty break, best swell W, best wind E (offshore), works at all tides, lefts and rights, crowded, rocks and locals (surf-forecast)."
+    surf_atlas: "thesurfatlas groups Tarquinio-Paraiso to Dragao Vermelho as the 'Castelo' peaks: A-frames with better rights, stable channels so fairly predictable banks, popular with schools when small, hollow fast sections on big winter NW swells. Naming differs from other sources (Praia do Castelo is also a beach 3 km further south), so confidence medium."
     meo_cams:
       - https://beachcam.meo.pt/livecams/costa-da-caparica-tarquinio/
       - https://beachcam.meo.pt/livecams/costa-da-caparica-tarquinio-fixa/
@@ -122,6 +151,11 @@ spots:
       lat: 38.64036
       lon: -9.24275
       match_confidence: medium
+    surf_forecast:
+      break: Costada-Caparica
+      six_day: https://www.surf-forecast.com/breaks/Costada-Caparica/forecasts/latest/six_day
+      guide: "Exposed beach/jetty break, best swell W, best wind E (offshore), works at all tides, lefts and rights, crowded, rocks and locals (surf-forecast)."
+    surf_atlas: "Same thesurfatlas 'Castelo' description as Tarquinio (A-frames, better rights, predictable banks)."
     meo_cams:
       - https://beachcam.meo.pt/livecams/costa-da-caparica-tarquinio/   # closest cam, no dedicated one found
     tide_preference: {value: unknown, evidence: []}
@@ -139,6 +173,11 @@ spots:
       lat: 38.64036
       lon: -9.24275
       match_confidence: low
+    surf_forecast:
+      break: Praia-da-Saude
+      six_day: https://www.surf-forecast.com/breaks/Praia-da-Saude/forecasts/latest/six_day
+      guide: "Nearest surf-forecast break, ~1 km south: exposed beach break, best swell SW, best wind NE (offshore), lefts and rights, rarely crowded. surf-forecast also lists 'Praiado-Castello' 0 km from Praia da Saude."
+    surf_atlas: "thesurfatlas on Praia da Saude: often semi-hollow lefts, fine for learners when small, harder paddle-out and shifty rip when big, thinner crowds."
     meo_cams:
       - https://beachcam.meo.pt/livecams/costa-da-caparica-praia-nova/
       - https://beachcam.meo.pt/livecams/costa-da-caparica-praia-nova-estatica/

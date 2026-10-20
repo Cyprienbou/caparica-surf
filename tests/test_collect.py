@@ -69,6 +69,18 @@ class CollectorTest(unittest.TestCase):
         self.assertTrue((data / "latest" / "weather.csv").exists())
         self.assertTrue((data / "latest" / "manifest.json").exists())
 
+    def test_energy_matches_surf_forecast_scale(self):
+        # surf-forecast.com showed 1.8 m / 12 s -> 970 kJ and 0.8 m / 11 s -> 160 kJ.
+        # Their H and T are rounded to 0.1 m and 1 s, so allow ~8%.
+        self.assertAlmostEqual(collect.wave_energy_kj(1.8, 12), 970, delta=80)
+        self.assertAlmostEqual(collect.wave_energy_kj(0.8, 11), 160, delta=13)
+        self.assertIsNone(collect.wave_energy_kj(None, 12))
+        row = {"swell_wave_height": 1.0, "swell_wave_peak_period": None, "swell_wave_period": 10.0,
+               "wave_height": 1.0, "wave_peak_period": 10.0}
+        collect.add_derived("marine", row)
+        self.assertAlmostEqual(row["energy_swell_kj"], 196, delta=1)  # falls back to mean period
+        self.assertAlmostEqual(row["energy_total_kj"], 196, delta=1)
+
     def test_url_contains_expected_params(self):
         config = json.loads(collect.CONFIG_PATH.read_text())
         url = collect.build_url(config["marine"], "dwd_ewam", 3)

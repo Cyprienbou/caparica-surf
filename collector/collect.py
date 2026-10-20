@@ -31,6 +31,32 @@ ATTRIBUTION = "Weather and marine data by Open-Meteo.com (CC BY 4.0); wave model
 
 Fetcher = Callable[[str], dict]
 
+# Deep-water wave energy per metre of crest over one wavelength:
+# E = (rho * g * H^2 / 8) * (g * T^2 / 2pi) = rho * g^2 * H^2 * T^2 / (16 pi)  ~= 1.96 kJ * H^2 * T^2
+# This matches the "energy (kJ)" shown by surf-forecast.com (checked on 9 forecast slots, ratio 1.85-2.11
+# because their H and T are rounded), so both sources can be compared on the same scale.
+ENERGY_KJ_COEF = 1025 * 9.81 ** 2 / (16 * 3.141592653589793) / 1000
+
+DERIVED = {
+    "marine": {
+        # name: (height variable, period variables in order of preference)
+        "energy_swell_kj": ("swell_wave_height", ["swell_wave_peak_period", "swell_wave_period"]),
+        "energy_total_kj": ("wave_height", ["wave_peak_period", "wave_period"]),
+    }
+}
+
+
+def wave_energy_kj(height, period):
+    if height is None or period is None:
+        return None
+    return round(ENERGY_KJ_COEF * height ** 2 * period ** 2, 1)
+
+
+def add_derived(source: str, row: dict) -> None:
+    for name, (h_var, t_vars) in DERIVED.get(source, {}).items():
+        period = next((row.get(t) for t in t_vars if row.get(t) is not None), None)
+        row[name] = wave_energy_kj(row.get(h_var), period)
+
 
 class FetchError(Exception):
     pass
@@ -112,6 +138,7 @@ def collect_source(source: str, source_cfg: dict, forecast_days: int, run_dir: P
         for i, t in enumerate(hourly["time"]):
             row = {"model": model, "time_utc": t}
             row.update({v: hourly[v][i] for v in variables})
+            add_derived(source, row)
             rows.append(row)
 
         status.update({
@@ -130,9 +157,9 @@ def collect_source(source: str, source_cfg: dict, forecast_days: int, run_dir: P
     return rows, statuses
 
 
-def write_csv(path: Path, rows: list[dict], variables: list[str]) -> None:
+def write_csv(path: Path, rows: list[dict], variables: list[str], derived: list[str]) -> None:
     with path.open("w", newline="") as fh:
-        writer = csv.DictWriter(fh, fieldnames=["model", "time_utc", *variables])
+        writer = csv.DictWriter(fh, fieldnames=["model", "time_utc", *variables, *derived])
         writer.writeheader()
         writer.writerows(rows)
 
@@ -159,7 +186,8 @@ def run(fetch: Fetcher = http_get_json, now: datetime | None = None, data_dir: P
         rows, statuses = collect_source(source, config[source], config["forecast_days"], run_dir, fetch)
         manifest["results"].extend(statuses)
         if rows:
-            write_csv(latest_dir / f"{source}.csv", rows, config[source]["hourly"])
+            write_csv(latest_dir / f"{source}.csv", rows, config[source]["hourly"],
+                      list(DERIVED.get(source, {})))
         else:
             print(f"[{source}] every model failed; latest/{source}.csv left unchanged", file=sys.stderr)
             exit_code = 1
