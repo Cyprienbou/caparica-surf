@@ -16,10 +16,22 @@ Goal: find clean, manageable sessions (breaking waves ~0.7 to 1.5 m, light offsh
 | Component | State |
 |---|---|
 | Repository | created |
-| Collector | not started |
+| Collector | written, offline tests passing, first live run pending |
 | Spot profiles | not started |
 | Tide data | source identified, not integrated |
 | Scheduled analysis | not started |
+
+## Collector
+
+`collector/collect.py` (standard library only) requests each wave model and each wind model separately, so one unavailable model never breaks a run. Points and models live in `config/collector.json`.
+
+Outputs, all timestamps in UTC:
+
+- `data/latest/marine.csv` and `data/latest/weather.csv`: one row per model and hour
+- `data/latest/manifest.json`: run time, grid cell actually used, per-model status and errors
+- `data/snapshots/<date>/<run_id>/`: raw API responses, kept to compare forecasts over time
+
+`.github/workflows/collect.yml` runs it six times a day (two UTC hours per Lisbon slot, to cover daylight saving time) and on demand. Tests: `python3 -m unittest discover -s tests`.
 
 ## Data sources and attribution
 
