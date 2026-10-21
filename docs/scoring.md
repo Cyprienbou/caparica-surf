@@ -57,6 +57,10 @@ and the weight given to each source.
 
 ## On-demand crowd check (separate workflow, not part of the score)
 
-When Cyp asks how many people are in the water, take a screenshot of the MEO Beachcam of that beach
-in his Chrome and estimate the number of surfers visible: few / medium / crowded, with the rough count.
+When Cyp asks how many people are in the water, open the MEO Beachcam of that beach in his Chrome
+and estimate the number of surfers visible: few / medium / crowded, with the rough count.
+The live cams pan between views every 5-10 seconds (tip from Cyp): take 4-6 screenshots over
+about 30-40 seconds and count per view, otherwise part of the beach is missed.
+Use the free cams: Tarquinio, costa-da-caparica-cds (good, per Cyp), Praia Nova, Sao Joao.
+The static CDS Norte / CDS Sul cams need Beachcam+.
 Daylight only, approximate (surfers are small at that distance), and it describes now, not tomorrow.
