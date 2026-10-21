@@ -20,7 +20,7 @@ Goal: find clean, manageable sessions (breaking waves ~0.7 to 1.5 m, light offsh
 | Spot profiles | 6 beaches with Surfline, surf-forecast, MEO cam mapping (`config/spots.yaml`); CDS Norte/Sul to confirm |
 | Scoring | v0 rules incl. wave energy (`docs/scoring.md`), not automated yet |
 | Tide data | source identified, not integrated |
-| Scheduled analysis | not started |
+| Scheduled analysis | Claude scheduled task "Alerte surf Caparica", 08:41 and 17:41 Lisbon, from 2026-10-22 |
 
 ## Collector
 
