@@ -1,6 +1,6 @@
 {
-  "run_id": "2026-11-17T1609Z",
-  "run_at_utc": "2026-11-17T16:09:00+00:00",
+  "run_id": "2026-11-17T2332Z",
+  "run_at_utc": "2026-11-17T23:32:09+00:00",
   "attribution": "Weather and marine data by Open-Meteo.com (CC BY 4.0); wave models from DWD, ECMWF, Meteo-France and NOAA.",
   "note": "Forecast model output, not observations. Offshore wave height is not breaking wave height.",
   "points": {
@@ -23,7 +23,7 @@
       "ok": true,
       "grid_latitude": 38.625,
       "grid_longitude": -9.2916565,
-      "generationtime_ms": 0.2905130386352539,
+      "generationtime_ms": 0.46324729919433594,
       "hours": 72,
       "first_time_utc": "2026-11-17T00:00",
       "last_time_utc": "2026-11-19T23:00",
@@ -41,7 +41,7 @@
       "ok": true,
       "grid_latitude": 38.5,
       "grid_longitude": -9.25,
-      "generationtime_ms": 0.1704692840576172,
+      "generationtime_ms": 0.2899169921875,
       "hours": 72,
       "first_time_utc": "2026-11-17T00:00",
       "last_time_utc": "2026-11-19T23:00",
@@ -67,7 +67,7 @@
       "ok": true,
       "grid_latitude": 38.629173,
       "grid_longitude": -9.306122,
-      "generationtime_ms": 0.11622905731201172,
+      "generationtime_ms": 0.27298927307128906,
       "hours": 72,
       "first_time_utc": "2026-11-17T00:00",
       "last_time_utc": "2026-11-19T23:00",
@@ -93,7 +93,7 @@
       "ok": true,
       "grid_latitude": 38.65,
       "grid_longitude": -9.3,
-      "generationtime_ms": 0.3186464309692383,
+      "generationtime_ms": 0.32448768615722656,
       "hours": 72,
       "first_time_utc": "2026-11-17T00:00",
       "last_time_utc": "2026-11-19T23:00",
@@ -110,22 +110,40 @@
       "source": "weather",
       "model": "meteofrance_seamless",
       "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=meteofrance_seamless&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
-      "ok": false,
-      "error": "URLError: <urlopen error _ssl.c:1063: The handshake operation timed out>"
+      "ok": true,
+      "grid_latitude": 38.64,
+      "grid_longitude": -9.24,
+      "generationtime_ms": 109.83860492706299,
+      "hours": 72,
+      "first_time_utc": "2026-11-17T00:00",
+      "last_time_utc": "2026-11-19T23:00",
+      "empty_variables": []
     },
     {
       "source": "weather",
       "model": "icon_seamless",
       "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=icon_seamless&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
-      "ok": false,
-      "error": "URLError: <urlopen error _ssl.c:1063: The handshake operation timed out>"
+      "ok": true,
+      "grid_latitude": 38.625,
+      "grid_longitude": -9.1875,
+      "generationtime_ms": 0.10383129119873047,
+      "hours": 72,
+      "first_time_utc": "2026-11-17T00:00",
+      "last_time_utc": "2026-11-19T23:00",
+      "empty_variables": []
     },
     {
       "source": "weather",
       "model": "ecmwf_ifs",
       "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=ecmwf_ifs&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
-      "ok": false,
-      "error": "URLError: <urlopen error _ssl.c:1063: The handshake operation timed out>"
+      "ok": true,
+      "grid_latitude": 38.629173,
+      "grid_longitude": -9.183655,
+      "generationtime_ms": 0.1710653305053711,
+      "hours": 72,
+      "first_time_utc": "2026-11-17T00:00",
+      "last_time_utc": "2026-11-19T23:00",
+      "empty_variables": []
     },
     {
       "source": "weather",
@@ -134,13 +152,13 @@
       "ok": true,
       "grid_latitude": 38.75,
       "grid_longitude": -9.25,
-      "generationtime_ms": 0.2868175506591797,
+      "generationtime_ms": 0.15783309936523438,
       "hours": 72,
       "first_time_utc": "2026-11-17T00:00",
       "last_time_utc": "2026-11-19T23:00",
       "empty_variables": []
     }
   ],
-  "ok_models": 5,
-  "failed_models": 3
+  "ok_models": 8,
+  "failed_models": 0
 }
