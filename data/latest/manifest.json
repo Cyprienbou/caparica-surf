@@ -1,6 +1,6 @@
 {
-  "run_id": "2026-11-22T1440Z",
-  "run_at_utc": "2026-11-22T14:40:18+00:00",
+  "run_id": "2026-11-22T2105Z",
+  "run_at_utc": "2026-11-22T21:05:28+00:00",
   "attribution": "Weather and marine data by Open-Meteo.com (CC BY 4.0); wave models from DWD, ECMWF, Meteo-France and NOAA.",
   "note": "Forecast model output, not observations. Offshore wave height is not breaking wave height.",
   "points": {
@@ -23,7 +23,7 @@
       "ok": true,
       "grid_latitude": 38.625,
       "grid_longitude": -9.2916565,
-      "generationtime_ms": 0.26345252990722656,
+      "generationtime_ms": 0.3056526184082031,
       "hours": 72,
       "first_time_utc": "2026-11-22T00:00",
       "last_time_utc": "2026-11-24T23:00",
@@ -41,7 +41,7 @@
       "ok": true,
       "grid_latitude": 38.5,
       "grid_longitude": -9.25,
-      "generationtime_ms": 0.3014802932739258,
+      "generationtime_ms": 0.2396106719970703,
       "hours": 72,
       "first_time_utc": "2026-11-22T00:00",
       "last_time_utc": "2026-11-24T23:00",
@@ -67,7 +67,7 @@
       "ok": true,
       "grid_latitude": 38.629173,
       "grid_longitude": -9.306122,
-      "generationtime_ms": 0.1316070556640625,
+      "generationtime_ms": 0.1360177993774414,
       "hours": 72,
       "first_time_utc": "2026-11-22T00:00",
       "last_time_utc": "2026-11-24T23:00",
@@ -93,7 +93,7 @@
       "ok": true,
       "grid_latitude": 38.65,
       "grid_longitude": -9.3,
-      "generationtime_ms": 0.3330707550048828,
+      "generationtime_ms": 0.3383159637451172,
       "hours": 72,
       "first_time_utc": "2026-11-22T00:00",
       "last_time_utc": "2026-11-24T23:00",
@@ -110,55 +110,31 @@
       "source": "weather",
       "model": "meteofrance_seamless",
       "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=meteofrance_seamless&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
-      "ok": true,
-      "grid_latitude": 38.64,
-      "grid_longitude": -9.24,
-      "generationtime_ms": 2585.822582244873,
-      "hours": 72,
-      "first_time_utc": "2026-11-22T00:00",
-      "last_time_utc": "2026-11-24T23:00",
-      "empty_variables": []
+      "ok": false,
+      "error": "HTTP 429: Daily API request limit exceeded. Please try again tomorrow."
     },
     {
       "source": "weather",
       "model": "icon_seamless",
       "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=icon_seamless&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
-      "ok": true,
-      "grid_latitude": 38.625,
-      "grid_longitude": -9.1875,
-      "generationtime_ms": 0.13518333435058594,
-      "hours": 72,
-      "first_time_utc": "2026-11-22T00:00",
-      "last_time_utc": "2026-11-24T23:00",
-      "empty_variables": []
+      "ok": false,
+      "error": "HTTP 429: Daily API request limit exceeded. Please try again tomorrow."
     },
     {
       "source": "weather",
       "model": "ecmwf_ifs",
       "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=ecmwf_ifs&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
-      "ok": true,
-      "grid_latitude": 38.629173,
-      "grid_longitude": -9.183655,
-      "generationtime_ms": 0.1430511474609375,
-      "hours": 72,
-      "first_time_utc": "2026-11-22T00:00",
-      "last_time_utc": "2026-11-24T23:00",
-      "empty_variables": []
+      "ok": false,
+      "error": "HTTP 429: Daily API request limit exceeded. Please try again tomorrow."
     },
     {
       "source": "weather",
       "model": "ecmwf_ifs025",
       "url": "https://api.open-meteo.com/v1/forecast?latitude=38.64&longitude=-9.24&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Ctemperature_2m%2Cprecipitation%2Ccloud_cover%2Cweather_code&models=ecmwf_ifs025&forecast_days=3&timezone=GMT&timeformat=iso8601&wind_speed_unit=kmh",
-      "ok": true,
-      "grid_latitude": 38.75,
-      "grid_longitude": -9.25,
-      "generationtime_ms": 0.1571178436279297,
-      "hours": 72,
-      "first_time_utc": "2026-11-22T00:00",
-      "last_time_utc": "2026-11-24T23:00",
-      "empty_variables": []
+      "ok": false,
+      "error": "HTTP 429: Daily API request limit exceeded. Please try again tomorrow."
     }
   ],
-  "ok_models": 8,
-  "failed_models": 0
+  "ok_models": 4,
+  "failed_models": 4
 }
